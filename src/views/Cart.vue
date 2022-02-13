@@ -1,14 +1,120 @@
 <template>
-  <div>
-    <h1>购物车</h1>
+  <div class="com-cart">
+    <div class="top">
+      <h1>
+        <router-link to="/">
+          <img src="../assets/images/logo-mi.png" title="小米官网" />
+        </router-link>
+        我的购物车
+      </h1>
+      <span>
+        <router-link to="/login" class="loginLink">登录</router-link>
+        <router-link to="/login" class="loginLink">注册</router-link>
+      </span>
+    </div>
+    <div class="cart-empty">
+      <div class="left"></div>
+      <div class="right">
+        <h2>您的购物车还是空的！</h2>
+        <p>登录后将显示您之前加入的商品</p>
+        <span>
+          <router-link to="/login" class="btnLeft">立即登录</router-link>
+          <router-link to="/" class="btnRight">马上去购物</router-link>
+        </span>
+      </div>
+    </div>
+    <MyFooter></MyFooter>
   </div>
 </template>
 
 <script>
+import MyFooter from "@/components/MyFooter";
 export default {
   name: "Cart",
+  components: {
+    MyFooter,
+  },
 };
 </script>
 
-<style>
+<style lang='less' scoped>
+.com-cart {
+  .top {
+    display: flex;
+    padding: 20px 160px;
+    border-bottom: 2px solid red;
+    h1 {
+      flex: 1;
+      font-weight: 400;
+      img {
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+        margin-right: 50px;
+      }
+    }
+    .loginLink {
+      flex: 1;
+      line-height: 50px;
+      text-decoration: none;
+      color: #757575;
+      &:hover {
+        color: #ff5c00;
+      }
+      &:nth-child(1) {
+        &::after {
+          content: "|";
+          margin: 0 5px;
+          color: #757575;
+        }
+      }
+    }
+  }
+  .cart-empty {
+    display: flex;
+    margin: 0 auto;
+    height: 500px;
+    background-color: #f5f5f5;
+    .left {
+      flex: 1;
+      background: url("../assets/images/cart-empty.png") no-repeat 320px 100px;
+    }
+    .right {
+      flex: 1;
+      padding: 180px 0 0;
+      h2 {
+        font-size: 36px;
+        color: #b0b0b0;
+      }
+      p {
+        color: #b0b0b0;
+        font-size: 20px;
+      }
+      .btnLeft {
+        display: inline-block;
+        width: 172px;
+        height: 50px;
+        margin: 25px 10px 0 0;
+        background-color: #ff6700;
+        border: 1px solid #ff6700;
+        font-size: 18px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+      }
+      .btnRight {
+        display: inline-block;
+        width: 170px;
+        height: 50px;
+        border: 1px solid #ff6700;
+        font-size: 18px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        color: #ff6700;
+      }
+    }
+  }
+}
 </style>

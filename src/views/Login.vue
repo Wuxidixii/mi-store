@@ -85,11 +85,10 @@ div {
   padding: 0;
 }
 .com-login {
-  margin: -8px 0 0 -8px;
   position: relative;
   .img {
     width: 380px;
-    height: 750px;
+    height: 760px;
     overflow: hidden;
     img {
       width: 100%;
