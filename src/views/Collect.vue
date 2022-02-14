@@ -1,22 +1,22 @@
 <template>
-  <div class="com-cart">
+  <div class="com-collect">
     <MyTop></MyTop>
     <div class="top">
       <h1>
         <router-link to="/">
           <img src="../assets/images/logo-mi.png" title="小米官网" />
         </router-link>
-        我的购物车
+        我的收藏
       </h1>
     </div>
-    <div class="cart-empty">
+    <div class="collect-empty">
       <div class="left"></div>
       <div class="right">
-        <h2>您的购物车还是空的！</h2>
-        <p>登录后将显示您之前加入的商品</p>
+        <h2>您的收藏还是空的！</h2>
+        <p>登录后再去收藏商品吧</p>
         <span>
           <router-link to="/login" class="btnLeft">立即登录</router-link>
-          <router-link to="/" class="btnRight">马上去购物</router-link>
+          <router-link to="/" class="btnRight">马上去收藏</router-link>
         </span>
       </div>
     </div>
@@ -28,7 +28,7 @@
 import Footer from "@/components/MyFooter";
 import MyTop from "@/components/MyTop";
 export default {
-  name: "Cart",
+  name: "Collect",
   components: {
     Footer,
     MyTop,
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style lang='less' scoped>
-.com-cart {
+.com-collect {
   .top {
     display: flex;
     padding: 20px 160px;
@@ -69,7 +69,7 @@ export default {
       }
     }
   }
-  .cart-empty {
+  .collect-empty {
     display: flex;
     margin: 0 auto;
     height: 500px;

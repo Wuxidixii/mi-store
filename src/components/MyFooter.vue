@@ -79,7 +79,7 @@
 
 <script>
 export default {
-  name: "myfooter",
+  name: "MyFooter",
 };
 </script>
 
@@ -94,7 +94,7 @@ a {
   text-decoration: none;
 }
 .footer {
-  height: 415px;
+  height: 280px;
 }
 .mod_help {
   height: 188px;
@@ -117,7 +117,7 @@ a {
   color: #333333;
 }
 .mod_help dl dd {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 .mod_help dl dd a {
   font-size: 12px;

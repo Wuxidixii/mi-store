@@ -10,11 +10,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang='less'>
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+  box-sizing: border-box;
   list-style: none;
 }
 </style>

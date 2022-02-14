@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Cart from '@/views/Cart'
 import Details from '@/views/Details'
 import Login from '@/views/Login'
+import Order from '@/views/Order'
+import Collect from '@/views/Collect'
 
 Vue.use(VueRouter)
 
@@ -27,6 +29,16 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/order',
+    name: 'Order',
+    component: Order
+  },
+  {
+    path: '/collect',
+    name: 'Collect',
+    component: Collect
   }
 ]
 

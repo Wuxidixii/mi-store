@@ -3,6 +3,12 @@
     <div class="img">
       <img src="@/assets/images/loginbg.jpg" alt="" />
     </div>
+    <div class="logo">
+      <router-link to="/">
+        <img src="../assets/images/logo-mi.png" title="小米官网" />
+      </router-link>
+      小米账号
+    </div>
     <div class="login">
       <el-tabs v-model="activeName">
         <el-tab-pane label="登录" name="first">
@@ -94,12 +100,23 @@ div {
       width: 100%;
     }
   }
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 400px;
+    font-size: 32px;
+    img {
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+    }
+  }
   .login {
     position: absolute;
     left: 600px;
     top: 100px;
     width: 400px;
-    height: 300px;
+    height: 350px;
     margin: 100px auto;
     padding: 50px;
     box-shadow: 1px 1px 4px;
@@ -120,7 +137,7 @@ div {
       margin: 10px 0;
     }
     /deep/ .el-button {
-      width: 400px;
+      width: 300px;
       height: 60px;
       color: #fff;
       font-size: 18px;
