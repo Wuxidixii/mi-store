@@ -62,8 +62,8 @@ export default {
         localStorage.setItem("myuser", this.myUser);
         localStorage.setItem("mypassword", this.myPassword);
         alert("注册成功！");
+        this.$store.commit("setUser", localStorage.myuser);
         this.$router.push("/");
-        // console.log("注册成功", localStorage.myuser);
       } else {
         alert("注册失败！");
       }
@@ -73,6 +73,7 @@ export default {
         this.user === localStorage.myuser &&
         this.password === localStorage.mypassword
       ) {
+        this.$store.commit("setUser", localStorage.myuser);
         alert("登录成功！");
         this.$router.push("/");
       } else {

@@ -13,10 +13,11 @@
       <div class="left"></div>
       <div class="right">
         <h2>您的收藏还是空的！</h2>
-        <p>登录后再去收藏商品吧</p>
-        <span>
+        <p v-if="!$store.state.user.myuser">登录后再去收藏商品吧</p>
+        <p v-else>快去收藏吧</p>
+        <span v-if="!$store.state.user.myuser">
           <router-link to="/login" class="btnLeft">立即登录</router-link>
-          <router-link to="/" class="btnRight">马上去收藏</router-link>
+          <router-link to="/goods" class="btnRight">马上去收藏</router-link>
         </span>
       </div>
     </div>

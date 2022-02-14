@@ -13,10 +13,11 @@
       <div class="left"></div>
       <div class="right">
         <h2>您的购物车还是空的！</h2>
-        <p>登录后将显示您之前加入的商品</p>
-        <span>
+        <p v-if="!$store.state.user.myuser">登录后将显示您之前加入的商品</p>
+        <p v-else>快去购物吧</p>
+        <span v-if="!$store.state.user.myuser">
           <router-link to="/login" class="btnLeft">立即登录</router-link>
-          <router-link to="/" class="btnRight">马上去购物</router-link>
+          <router-link to="/goods" class="btnRight">马上去购物</router-link>
         </span>
       </div>
     </div>
