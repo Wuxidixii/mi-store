@@ -5,8 +5,8 @@
     <div class="home-main">
       <!-- 轮播图 -->
       <el-carousel trigger="click" height="460px">
-        <el-carousel-item v-for="item in 3" :key="item">
-          <img style="height: 460px" src="../assets/images/banner1.jpg" />
+        <el-carousel-item v-for="item in bannerData" :key="item.id">
+          <img style="height: 460px" :src="item.url" />
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -18,14 +18,24 @@
 <script>
 import Footer from "@/components/MyFooter";
 import MyTop from "@/components/MyTop";
+
+import { getImage } from "@/api/data";
+
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      bannerData: [],
+    };
   },
   components: {
     Footer,
     MyTop,
+  },
+  created() {
+    getImage().then(({ data: res }) => {
+      this.bannerData = res.data.bannerData;
+    });
   },
 };
 </script>

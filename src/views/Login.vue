@@ -61,11 +61,14 @@ export default {
       if (this.myUser !== "" && this.myPassword !== "") {
         localStorage.setItem("myuser", this.myUser);
         localStorage.setItem("mypassword", this.myPassword);
-        alert("注册成功！");
+        this.$message({
+          type: "success",
+          message: "注册成功",
+        });
         this.$store.commit("setUser", localStorage.myuser);
         this.$router.push("/");
       } else {
-        alert("注册失败！");
+        this.$message.error("注册失败");
       }
     },
     login() {
@@ -74,10 +77,13 @@ export default {
         this.password === localStorage.mypassword
       ) {
         this.$store.commit("setUser", localStorage.myuser);
-        alert("登录成功！");
+        this.$message({
+          type: "success",
+          message: "登录成功",
+        });
         this.$router.push("/");
       } else {
-        alert("登录失败！");
+        this.$message.error("登录失败");
       }
     },
   },

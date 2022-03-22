@@ -73,7 +73,10 @@ export default {
     },
     lagout() {
       this.$store.commit("setUser", "");
-      alert("成功退出登录");
+      this.$message({
+        type: "success",
+        message: "成功退出登录",
+      });
     },
   },
 };
